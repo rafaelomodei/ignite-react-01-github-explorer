@@ -1,8 +1,11 @@
 const path = require('path');
 const HtmlWebpackPligin = require('html-webpack-plugin');
 
+const isDevelopment = process.env.NODE_ENV === 'production';
+
 module.exports = {
-  mode: 'development',
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   entry: path.resolve(__dirname, 'src', 'index.jsx'),
   output:{
     path: path.resolve(__dirname, 'dist'),
@@ -25,6 +28,11 @@ module.exports = {
         test: /\.jsx$/,
         exclude: /node_modules/, //não converte os dados da pasta node modules... é responsabilidade da biblioteca
         use: 'babel-loader', //responsavel por converter o arqui que está vindo do "test"
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/, //não converte os dados da pasta node modules... é responsabilidade da biblioteca
+        use: ['style-loader', 'css-loader'], //responsavel por converter o arqui que está vindo do "test"
       }
     ]
   }
