@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPligin = require('html-webpack-plugin');
+const loader = require('sass-loader');
 
 const isDevelopment = process.env.NODE_ENV === 'production';
 
@@ -30,9 +31,9 @@ module.exports = {
         use: 'babel-loader', //responsavel por converter o arqui que está vindo do "test"
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: /node_modules/, //não converte os dados da pasta node modules... é responsabilidade da biblioteca
-        use: ['style-loader', 'css-loader'], //responsavel por converter o arqui que está vindo do "test"
+        use: ['style-loader', 'css-loader', 'sass-loader'], //responsavel por converter o arqui que está vindo do "test"
       }
     ]
   }

@@ -24,3 +24,9 @@ variavel de ambiente independete do S.O
 
 para fazer leitura de arquivos css
 ```yarn add style-loader css-loader -D```
+
+add o sass
+```yarn add node-sass -D```
+
+preprocessador de css sass
+```yarn add sass-loader -D```
