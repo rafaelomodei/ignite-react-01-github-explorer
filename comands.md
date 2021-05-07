@@ -12,3 +12,6 @@ add babel interpretador do react
 
 add webpak, transforma sass css jpg... em algo que o browser entende
 ```yarn add webpack webpack-cli -D```
+
+gerenciador de script do webpack
+```yarn add html-webpack-plugin -D```

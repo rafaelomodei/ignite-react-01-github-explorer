@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPligin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,6 +11,11 @@ module.exports = {
   resolve:{
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new HtmlWebpackPligin({
+      template: path.resolve(__dirname, 'public', 'index.html')
+    })
+  ],
   module:{
     rules:[
       {
