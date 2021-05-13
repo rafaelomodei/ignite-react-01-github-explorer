@@ -30,3 +30,6 @@ add o sass
 
 preprocessador de css sass
 ```yarn add sass-loader -D```
+
+criar um cach da nossa aplicação ao salver, assim não reseta do zeoro
+```yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh```
